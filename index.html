@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== PRIMARY SEO META ===== -->
+  <title>M&M Styles – Luxury Event Planning & Decoration in Abuja, Nigeria</title>
+  <meta name="description" content="M&M Styles offers bespoke event planning, luxury wedding decoration, birthday party styling, and corporate event management in Abuja, Nigeria. Book your consultation today." />
+  <meta name="keywords" content="event planner Abuja, wedding decoration Nigeria, luxury event stylist Abuja, birthday party styling Abuja, professional event planning services, bridal shower Abuja, corporate event decoration Nigeria, M&M Styles" />
+  <meta name="author" content="M&M Styles" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.mmstyles.events/" />
+
+  <!-- ===== OPEN GRAPH ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="M&M Styles – Luxury Event Planning & Decoration in Abuja" />
+  <meta property="og:description" content="Bespoke event styling, decoration & celebration management in Abuja, Nigeria. We turn your dream events into reality." />
+  <meta property="og:url" content="https://www.mmstyles.events/" />
+  <meta property="og:image" content="https://www.mmstyles.events/og-image.jpg" />
+  <meta property="og:locale" content="en_NG" />
+  <meta property="og:site_name" content="M&M Styles" />
+
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="M&M Styles – Luxury Event Planning in Abuja" />
+  <meta name="twitter:description" content="Discover bespoke event planning and luxury decor services from M&M Styles, Abuja." />
+  <meta name="twitter:image" content="https://www.mmstyles.events/og-image.jpg" />
+
+  <!-- ===== LOCAL BUSINESS SCHEMA (JSON-LD) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EventPlanningService",
+    "name": "M&M Styles",
+    "image": "https://www.mmstyles.events/og-image.jpg",
+    "description": "Luxury event planning, decoration, and celebration management in Abuja, Nigeria.",
+    "url": "https://www.mmstyles.events",
+    "telephone": "+2348094638790",
+    "email": "info@mmstyles.events",
+    "address": { "@type": "PostalAddress", "addressLocality": "Abuja", "addressCountry": "NG" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 9.0579, "longitude": 7.4951 },
+    "openingHours": "Mo-Sa 09:00-18:00",
+    "priceRange": "NNNNN",
+    "sameAs": [
+      "https://www.facebook.com/mmstyles.events/",
+      "https://www.instagram.com/mmstyles_corporateeventsng/"
+    ],
+    "areaServed": { "@type": "City", "name": "Abuja" },
+    "serviceType": ["Wedding Planning","Event Decoration","Birthday Party Styling","Corporate Event Planning","Bridal Shower","Kids Party"]
+  }
+  </script>
+
+  <!-- ===== EMAILJS SDK ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init({ publicKey: 'H_xGDByxw8GyI06yX' });
+    })();
+  </script>
+
+  <!-- ===== FONTS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💐</text></svg>" />
+
+  <style>
+    /* ===== WHATSAPP FLOATING BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 9999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: waPulse 2.8s ease-in-out infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.12) rotate(-4deg);
+      box-shadow: 0 12px 44px rgba(37,211,102,0.7);
+      animation: none;
+    }
+    .whatsapp-float svg { width: 34px; height: 34px; }
+    .wa-tooltip {
+      position: absolute;
+      right: 72px;
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      padding: 9px 14px;
+      border-radius: 6px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+    .wa-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: #0a0a0a;
+      border-right: 0;
+    }
+    .whatsapp-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+      50%      { box-shadow: 0 6px 44px rgba(37,211,102,0.85), 0 0 0 14px rgba(37,211,102,0.1); }
+    }
+    @media (max-width: 600px) {
+      .whatsapp-float { bottom: 20px; right: 16px; width: 54px; height: 54px; }
+      .wa-tooltip { display: none; }
+    }
+
+    /* ===== MOBILE MENU CLOSE BUTTON ===== */
+    .nav-close-btn {
+      display: none;
+      position: fixed;
+      top: 18px;
+      right: 20px;
+      z-index: 1200;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+      border: 1.5px solid rgba(201,168,76,0.45);
+      color: #c9a84c;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, transform 0.3s ease;
+    }
+    .nav-close-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      display: block;
+      pointer-events: none;
+    }
+    .nav-close-btn:hover {
+      background: rgba(201,168,76,0.28);
+      transform: rotate(90deg);
+    }
+    @media (max-width: 768px) {
+      .nav-close-btn.is-open { display: flex; }
+    }
+
+    /* ===== CONTACT SOCIAL BUTTONS ===== */
+    .social-btn-fb, .social-btn-ig, .social-btn-wa {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 18px; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 4px; text-decoration: none;
+      transition: all 0.3s ease; font-family: 'Jost', sans-serif;
+    }
+    .social-btn-fb  { border: 1px solid #1877F2; color: #1877F2; background: rgba(24,119,242,0.06); }
+    .social-btn-fb:hover  { background: #1877F2; color: #fff; }
+    .social-btn-ig  { border: 1px solid #E1306C; color: #E1306C; background: rgba(225,48,108,0.06); }
+    .social-btn-ig:hover  { background: #E1306C; color: #fff; }
+    .social-btn-wa  { border: 1px solid #25D366; color: #25D366; background: rgba(37,211,102,0.06); }
+    .social-btn-wa:hover  { background: #25D366; color: #fff; }
+    .social-btn-fb svg,
+    .social-btn-ig svg,
+    .social-btn-wa svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+    .ci-social { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* ===== TEAM CARD PHOTO ===== */
+    .tc-avatar {
+      width: 100%;
+      height: 360px;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #c9a84c, #9d7a30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tc-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .tc-initials {
+      font-family: 'Jost', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0a0a0a;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== PORTFOLIO PHOTO CARDS ===== */
+    .pg-visual {
+      width: 100%;
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pg-large .pg-visual { height: 280px; }
+
+    /* Real photo variant */
+    .pg-visual.pg-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.55s ease;
+    }
+    .pg-item:hover .pg-visual.pg-img img {
+      transform: scale(1.06);
+    }
+
+    /* ===== VISITOR REVIEWS ===== */
+    .visitor-reviews { background: #0a0a0a; padding: 100px 0; }
+    .visitor-reviews .section-header h2 { color: #faf8f3; }
+    .visitor-reviews .section-header p  { color: rgba(250,248,243,0.6); }
+
+    .review-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+
+    .reviews-feed-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; flex-wrap: wrap; gap: 8px; }
+    .rfh-label { font-family: 'Jost',sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,248,243,0.45); }
+    .rfh-count { font-family: 'Cormorant Garamond',serif; font-size: 1.2rem; font-weight: 400; color: #c9a84c; }
+    .rfh-avg { font-family: 'Jost',sans-serif; font-size: 0.8rem; color: rgba(250,248,243,0.5); font-weight: 300; margin-bottom: 20px; }
+    .rfh-avg strong { color: #c9a84c; }
+    .rfh-avg .avg-stars { color: #c9a84c; }
+
+    .reviews-list {
+      display: flex; flex-direction: column; gap: 18px;
+      max-height: 580px; overflow-y: auto; padding-right: 6px; scroll-behavior: smooth;
+    }
+    .reviews-list::-webkit-scrollbar { width: 4px; }
+    .reviews-list::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 4px; }
+    .reviews-list::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 4px; }
+
+    .review-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.14);
+      border-radius: 8px; padding: 24px 26px;
+      transition: border-color 0.3s ease;
+      animation: fadeInUp 0.45s ease both;
+    }
+    .review-card:hover { border-color: rgba(201,168,76,0.35); }
+    .rc-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+    .rc-author { display: flex; align-items: center; gap: 12px; }
+    .rc-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, #c9a84c, #9d7a30);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Jost',sans-serif; font-size: 0.82rem; font-weight: 700;
+      color: #0a0a0a; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .rc-name { font-family: 'Jost',sans-serif; font-size: 0.9rem; font-weight: 600; color: #faf8f3; }
+    .rc-date { font-family: 'Jost',sans-serif; font-size: 0.7rem; color: rgba(250,248,243,0.38); margin-top: 2px; }
+    .rc-stars { color: #c9a84c; font-size: 0.92rem; letter-spacing: 2px; flex-shrink: 0; }
+    .rc-text {
+      font-family: 'Cormorant Garamond',serif;
+      font-size: 1.02rem; font-style: italic; font-weight: 300;
+      color: rgba(250,248,243,0.78); line-height: 1.72;
+    }
+    .rc-tag {
+      display: inline-block; margin-top: 12px;
+      font-family: 'Jost',sans-serif; font-size: 0.66rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: #c9a84c; background: rgba(201,168,76,0.08);
+      padding: 3px 10px; border-radius: 50px; border: 1px solid rgba(201,168,76,0.22);
+    }
+    .reviews-empty {
+      text-align: center; padding: 48px 20px;
+      color: rgba(250,248,243,0.3);
+      font-family: 'Jost',sans-serif; font-size: 0.9rem; font-weight: 300;
+      border: 1px dashed rgba(201,168,76,0.15); border-radius: 8px;
+    }
+    .reviews-empty .empty-icon { font-size: 3rem; display: block; margin-bottom: 12px; color: rgba(201,168,76,0.3); }
+
+    .review-form-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: 8px; padding: 40px 36px;
+      position: sticky; top: 100px;
+    }
+    .rfb-title { font-family: 'Cormorant Garamond',serif; font-size: 1.7rem; font-weight: 400; color: #faf8f3; margin-bottom: 6px; }
+    .rfb-sub   { font-family: 'Jost',sans-serif; font-size: 0.85rem; color: rgba(250,248,243,0.45); font-weight: 300; margin-bottom: 28px; line-height: 1.6; }
+
+    .star-rating-wrap { margin-bottom: 20px; }
+    .star-rating-label { display: block; font-family: 'Jost',sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,248,243,0.6); margin-bottom: 10px; }
+    .stars-interactive { display: flex; gap: 6px; flex-direction: row-reverse; justify-content: flex-end; }
+    .stars-interactive label.selected { color: #c9a84c; }
+    .star-err { font-family: 'Jost',sans-serif; font-size: 0.72rem; color: #e07070; display: none; margin-top: 6px; }
+
+    .rfb-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .rfb-group { margin-bottom: 16px; }
+    .rfb-lbl { display: block; font-family: 'Jost',sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(250,248,243,0.6); margin-bottom: 7px; }
+    .rfb-inp, .rfb-sel, .rfb-txt {
+      width: 100%; padding: 12px 16px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px; font-family: 'Jost',sans-serif; font-size: 0.9rem;
+      color: #faf8f3; outline: none; transition: border-color 0.3s ease;
+      -webkit-appearance: none;
+    }
+    .rfb-inp::placeholder, .rfb-txt::placeholder { color: rgba(250,248,243,0.28); }
+    .rfb-inp:focus, .rfb-sel:focus, .rfb-txt:focus { border-color: #c9a84c; box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+    .rfb-sel option { background: #1e1e1e; color: #faf8f3; }
+    .rfb-txt { resize: vertical; min-height: 110px; }
+    .rfb-err { border-color: #e07070 !important; }
+
+    .rfb-submit {
+      width: 100%; padding: 15px;
+      background: linear-gradient(135deg, #c9a84c, #9d7a30);
+      color: #0a0a0a; border: none; border-radius: 4px;
+      font-family: 'Jost',sans-serif; font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+      transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+      margin-top: 8px;
+    }
+    .rfb-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.5); }
+    .rfb-submit:active { transform: translateY(0); }
+
+    .review-submitted { display: none; text-align: center; padding: 40px 20px; }
+    .rs-check { font-size: 3rem; color: #c9a84c; display: block; margin-bottom: 14px; }
+    .rs-h { font-family: 'Cormorant Garamond',serif; font-size: 1.6rem; font-weight: 400; color: #faf8f3; margin-bottom: 10px; }
+    .rs-p { font-family: 'Jost',sans-serif; font-size: 0.85rem; color: rgba(250,248,243,0.5); font-weight: 300; margin-bottom: 20px; }
+    .rs-again {
+      background: none; border: 1px solid rgba(201,168,76,0.4);
+      color: #c9a84c; padding: 10px 24px; border-radius: 4px; cursor: pointer;
+      font-family: 'Jost',sans-serif; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+    .rs-again:hover { background: rgba(201,168,76,0.1); }
+
+    @media (max-width: 860px) {
+      .review-layout { grid-template-columns: 1fr; }
+      .review-form-box { position: static; }
+      .reviews-list { max-height: 380px; }
+      .rfb-row { grid-template-columns: 1fr; }
+    }
+
+    /* ===== CONTACT FORM STATES ===== */
+    .btn-sending {
+      opacity: 0.7;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .form-error-msg {
+      margin-top: 12px;
+      padding: 12px 16px;
+      background: rgba(224, 112, 112, 0.08);
+      border: 1px solid rgba(224, 112, 112, 0.3);
+      border-radius: 4px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem;
+      color: #e07070;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+  <a href="https://wa.me/2348094638790?text=Hi%20M%26M%20Styles!%20I'd%20like%20to%20enquire%20about%20your%20event%20planning%20services."
+     target="_blank" rel="noopener noreferrer"
+     class="whatsapp-float"
+     aria-label="Chat with M&amp;M Styles on WhatsApp">
+    <span class="wa-tooltip">Chat with us on WhatsApp</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white">
+      <path d="M16 1C7.729 1 1 7.729 1 16c0 2.699.707 5.228 1.943 7.425L1.05 30.26a.75.75 0 0 0 .922.923l6.906-1.877A14.935 14.935 0 0 0 16 31c8.271 0 15-6.729 15-15S24.271 1 16 1zm0 27.5a13.44 13.44 0 0 1-6.79-1.842.75.75 0 0 0-.576-.079l-5.32 1.447 1.46-5.254a.75.75 0 0 0-.085-.593A13.44 13.44 0 0 1 2.5 16C2.5 8.556 8.556 2.5 16 2.5S29.5 8.556 29.5 16 23.444 28.5 16 28.5zm7.39-9.928c-.392-.196-2.318-1.144-2.677-1.274-.358-.13-.619-.196-.879.196-.261.392-1.01 1.274-1.238 1.534-.228.261-.457.293-.849.098-.392-.196-1.655-.61-3.153-1.943-1.165-1.038-1.952-2.319-2.18-2.71-.228-.392-.024-.604.172-.799.176-.175.392-.457.588-.685.196-.228.261-.392.392-.653.13-.261.065-.49-.033-.685-.098-.196-.879-2.12-1.205-2.903-.317-.763-.64-.659-.879-.671-.228-.011-.49-.014-.75-.014s-.685.098-.979.392c-.294.294-1.175 1.144-1.175 2.787 0 1.643 1.207 3.23 1.377 3.453.17.228 2.39 3.65 5.792 5.12.81.35 1.441.558 1.933.715.812.26 1.551.223 2.136.136.651-.097 2.006-.82 2.29-1.612.284-.793.284-1.474.198-1.617-.086-.143-.32-.228-.71-.424z"/>
+    </svg>
+  </a>
+
+  <!-- ===== MOBILE MENU CLOSE BUTTON ===== -->
+  <button class="nav-close-btn" id="navCloseBtn" aria-label="Close navigation menu">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-inner">
+      <a href="#home" class="logo" aria-label="M&M Styles Home">
+        <span class="logo-mm">M&amp;M</span>
+        <span class="logo-styles">STYLES</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#visitor-reviews">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home" aria-label="Hero Section">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-pattern"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Abuja's Premier Event Stylists</p>
+      <h1 class="hero-headline">
+        Crafting<br/>
+        <em>Unforgettable</em><br/>
+        Events &amp; Luxury<br/>
+        Experiences
+      </h1>
+      <p class="hero-sub">Bespoke Event Styling, Decoration &amp; Celebration Management in Abuja, Nigeria</p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-gold">Explore Our Services</a>
+        <a href="#contact" class="btn btn-outline">Book a Consultation</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Events Styled</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Client Satisfaction</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== INTRO STRIP ===== -->
+  <section class="intro-strip" aria-label="Introduction">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <span class="section-tag">Who We Are</span>
+          <h2>Where Vision Meets Artistry</h2>
+          <p>M&amp;M Styles is Abuja's foremost luxury event planning and decoration studio. We specialise in crafting bespoke experiences — from grand weddings and elegant bridal showers to vibrant birthday celebrations, themed kids' parties, and polished corporate events.</p>
+          <p>Led by a team of seasoned creative visionaries, we combine years of industry expertise with an unwavering commitment to your unique vision. From the first consultation to the final flourish, M&amp;M Styles ensures every detail is executed flawlessly.</p>
+          <a href="#about" class="btn btn-dark">Meet the Team</a>
+        </div>
+        <div class="intro-visual">
+          <div class="visual-frame">
+            <div class="visual-card vc-1"><div class="vc-icon">💍</div><p>Luxury Weddings</p></div>
+            <div class="visual-card vc-2"><div class="vc-icon">🎂</div><p>Birthday Styling</p></div>
+            <div class="visual-card vc-3"><div class="vc-icon">🌸</div><p>Floral Design</p></div>
+            <div class="visual-card vc-4"><div class="vc-icon">🏢</div><p>Corporate Events</p></div>
+            <div class="visual-bg-text" aria-hidden="true">M&amp;M</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services" aria-label="Our Services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Offer</span>
+        <h2>Tailored Services for Every Celebration</h2>
+        <p>From intimate gatherings to grand spectacles, our full-service offerings ensure a seamless, stunning experience from concept to execution.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sc-icon">🎊</div><h3 itemprop="name">Event Planning &amp; Coordination</h3>
+          <p itemprop="description">Full-scale planning and management from initial concept through flawless execution. We handle timelines, vendors, logistics, and every detail so you can enjoy your special day.</p>
+          <ul class="sc-list"><li>Vendor sourcing &amp; management</li><li>Day-of coordination</li><li>Budget planning &amp; tracking</li><li>Full event run-of-show</li></ul>
+          <a href="#contact" class="sc-link">Enquire Now →</a>
+        </article>
+        <article class="service-card sc-featured" itemscope itemtype="https://schema.org/Service">
+          <div class="sc-badge">Most Popular</div>
+          <div class="sc-icon">💐</div><h3 itemprop="name">Decoration &amp; Styling</h3>
+          <p itemprop="description">Custom décor for weddings, birthdays, bridal showers, engagements, and kids' events. Our design team transforms any venue into a breathtaking visual story.</p>
+          <ul class="sc-list"><li>Floral arrangements &amp; centrepieces</li><li>Table linen &amp; chair styling</li><li>Arch &amp; backdrop design</li><li>Ambient lighting &amp; candles</li></ul>
+          <a href="#contact" class="sc-link">Enquire Now →</a>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sc-icon">🎭</div><h3 itemprop="name">Themed Setups</h3>
+          <p itemprop="description">Creative theme design tailored to each unique celebration — fairy-tale wedding, Hollywood glamour, garden soirée, or Afrobeats brunch. We bring it to life.</p>
+          <ul class="sc-list"><li>Concept development</li><li>Custom props &amp; installations</li><li>Colour palette curation</li><li>Printed stationery &amp; signage</li></ul>
+          <a href="#contact" class="sc-link">Enquire Now →</a>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sc-icon">🏛️</div><h3 itemprop="name">Corporate Event Styling</h3>
+          <p itemprop="description">Elegant, branded event décor for product launches, conferences, award ceremonies, and corporate functions that reflect your brand's identity.</p>
+          <ul class="sc-list"><li>Brand-aligned décor</li><li>Stage &amp; backdrop design</li><li>Corporate gifting &amp; packaging</li><li>Networking space styling</li></ul>
+          <a href="#contact" class="sc-link">Enquire Now →</a>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sc-icon">🗂️</div><h3 itemprop="name">Consultation &amp; Event Strategy</h3>
+          <p itemprop="description">Personalised one-on-one planning sessions to map out every detail of your event. Perfect for DIY clients who need expert guidance and a structured plan.</p>
+          <ul class="sc-list"><li>Vision board creation</li><li>Vendor recommendations</li><li>Event timeline drafting</li><li>Budget optimisation advice</li></ul>
+          <a href="#contact" class="sc-link">Book a Session →</a>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <div class="sc-icon">🎈</div><h3 itemprop="name">Kids' Party Styling</h3>
+          <p itemprop="description">Whimsical, colourful, and utterly magical celebrations for your little ones. From balloon installations to character-themed décor, we make childhood memories last forever.</p>
+          <ul class="sc-list"><li>Character themed setups</li><li>Balloon columns &amp; arches</li><li>Candy &amp; dessert tables</li><li>Activity zone decoration</li></ul>
+          <a href="#contact" class="sc-link">Enquire Now →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about" aria-label="About M&M Styles">
+    <div class="about-accent" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Story</span>
+        <h2>Creative Visionaries Behind Every Detail</h2>
+        <p>M&amp;M Styles is led by passionate professionals who live and breathe event design. Our team brings together creativity, strategy, and meticulous attention to detail.</p>
+      </div>
+      <div class="team-grid">
+        <article class="team-card" itemscope itemtype="https://schema.org/Person">
+          <div class="tc-avatar tc-a1">
+            <img src="./pictures/miss mm.jpg" alt="Eniola Adegoroye – Lead Creative Director at M&M Styles"
+                 onerror="this.style.display='none';this.parentNode.querySelector('.tc-initials').style.display='flex';">
+            <div class="tc-initials" style="display:none;">EA</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-role" itemprop="jobTitle">Lead Creative Director</div>
+            <h3 itemprop="name">Eniola Adegoroye</h3>
+            <p itemprop="description">With over 8 years of experience in luxury event styling and decoration, Eniola is the creative force behind M&amp;M Styles. Her eye for detail and passion for storytelling through design have graced hundreds of Abuja's most memorable celebrations.</p>
+            <div class="tc-exp">8+ Years Experience</div>
+          </div>
+        </article>
+        <article class="team-card" itemscope itemtype="https://schema.org/Person">
+          <div class="tc-avatar tc-a2">
+            <img src="./pictures/mr mm.avif" alt="Oluwatobi Ola – Event Coordinator at M&M Styles"
+                 onerror="this.style.display='none';this.parentNode.querySelector('.tc-initials').style.display='flex';">
+            <div class="tc-initials" style="display:none;">OO</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-role" itemprop="jobTitle">Event Coordinator</div>
+            <h3 itemprop="name">Oluwatobi Ola</h3>
+            <p itemprop="description">Oluwatobi is the organisational heartbeat of M&amp;M Styles. With 5+ years coordinating seamless events across Abuja and beyond, she ensures every timeline is met and every client feels completely at ease.</p>
+            <div class="tc-exp">5+ Years Experience</div>
+          </div>
+        </article>
+        <article class="team-card" itemscope itemtype="https://schema.org/Person">
+          <div class="tc-avatar tc-a3">
+            <img src="./pictures/mc mm.avif" alt="Temi Adegoroye – Business Patron at M&M Styles"
+                 onerror="this.style.display='none';this.parentNode.querySelector('.tc-initials').style.display='flex';">
+            <div class="tc-initials" style="display:none;">TA</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-role" itemprop="jobTitle">Business Patron</div>
+            <h3 itemprop="name">Temi Adegoroye</h3>
+            <p itemprop="description">With a decade of business expertise, Temi provides strategic direction and industry wisdom that elevates M&amp;M Styles into a brand that delivers truly transformative experiences.</p>
+            <div class="tc-exp">10+ Years Expertise</div>
+          </div>
+        </article>
+      </div>
+      <div class="about-philosophy">
+        <div class="ap-quote">"We don't just decorate spaces — we create worlds where your most precious memories are made."</div>
+        <p class="ap-attr">— M&amp;M Styles Creative Philosophy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section class="portfolio" id="portfolio" aria-label="Portfolio Gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Work</span>
+        <h2>A Gallery of Beautiful Celebrations</h2>
+        <p>Each event is a unique story. Here are just a few of the unforgettable experiences we've had the honour of creating.</p>
+      </div>
+      <div class="portfolio-filter" role="tablist" aria-label="Filter portfolio">
+        <button class="pf-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="pf-btn" data-filter="wedding" role="tab" aria-selected="false">Weddings</button>
+        <button class="pf-btn" data-filter="birthday" role="tab" aria-selected="false">Birthdays</button>
+        <button class="pf-btn" data-filter="corporate" role="tab" aria-selected="false">Corporate</button>
+        <button class="pf-btn" data-filter="kids" role="tab" aria-selected="false">Kids' Parties</button>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- wedding.jpg → Golden Opulence Wedding -->
+        <div class="pg-item" data-cat="wedding">
+          <div class="pg-visual pg-img">
+            <img src="./pictures/wedding.jpg"
+                 alt="Golden Opulence Wedding — grand hall with pink florals and gold balloons by M&amp;M Styles Abuja"
+                 loading="lazy" />
+          </div>
+          <div class="pg-info">
+            <span class="pg-cat">Wedding</span>
+            <h4>Golden Opulence Wedding</h4>
+            <p>A grand wedding celebration adorned with pink florals, gold balloons, and elegant table settings at a premium Abuja venue.</p>
+          </div>
+        </div>
+
+        <!-- dinning_mm.jpg → Glamour Gala 50th -->
+        <div class="pg-item" data-cat="birthday">
+          <div class="pg-visual pg-img">
+            <img src="./pictures/dinning_mm.jpg"
+                 alt="Glamour Gala rooftop luxury dining event with gold table runners styled by M&amp;M Styles Abuja"
+                 loading="lazy" />
+          </div>
+          <div class="pg-info">
+            <span class="pg-cat">Birthday</span>
+            <h4>Glamour Gala 50th</h4>
+            <p>A luxury rooftop dining experience with bespoke gold table runners, custom place settings, and lush botanical surroundings.</p>
+          </div>
+        </div>
+
+        <!-- bridal_shower.jpg → Garden Rose Bridal Shower (LARGE span) -->
+        <div class="pg-item pg-large" data-cat="wedding">
+          <div class="pg-visual pg-img">
+            <img src="./pictures/bridal_shower.jpg"
+                 alt="Dorcas Bridal Shower with purple and gold balloon arch by M&amp;M Styles Abuja"
+                 style="object-position: center top;"
+                 loading="lazy" />
+          </div>
+          <div class="pg-info">
+            <span class="pg-cat">Bridal Shower</span>
+            <h4>Garden Rose Bridal Shower</h4>
+            <p>A stunning purple and gold bridal shower featuring an elaborate balloon arch, sheer draping backdrop, and personalised gold lettering for the bride-to-be.</p>
+          </div>
+        </div>
+
+        <!-- launch.jpg → Corporate Product Launch -->
+        <div class="pg-item" data-cat="corporate">
+          <div class="pg-visual pg-img">
+            <img src="./pictures/launch.jpg"
+                 alt="Corporate event hall with teal draping and white seating by M&amp;M Styles Abuja"
+                 style="object-position: center top;"
+                 loading="lazy" />
+          </div>
+          <div class="pg-info">
+            <span class="pg-cat">Corporate</span>
+            <h4>Corporate Product Launch</h4>
+            <p>A large-scale corporate hall transformation with teal and white draping, a patterned aisle runner, and impeccably dressed seating for hundreds of guests.</p>
+          </div>
+        </div>
+
+        <!-- kids.jpg → Unicorn Wonderland -->
+        <div class="pg-item" data-cat="kids">
+          <div class="pg-visual pg-img">
+            <img src="./pictures/kids.jpg"
+                 alt="Nahla's 2nd birthday kids party with vibrant balloon wall by M&amp;M Styles Abuja"
+                 loading="lazy" />
+          </div>
+          <div class="pg-info">
+            <span class="pg-cat">Kids' Party</span>
+            <h4>Unicorn Wonderland</h4>
+            <p>A vibrant magical 2nd birthday with a show-stopping balloon installation in pink, green, and yellow, and a personalised number balloon centrepiece.</p>
+          </div>
+        </div>
+
+        <!-- gala.jpg → Emerald Elegance 40th -->
+        <div class="pg-item" data-cat="birthday">
+          <div class="pg-visual pg-img">
+            <img src="./pictures/gala.jpg"
+                 alt="Purple neon rooftop gala at night with fairy lights styled by M&amp;M Styles Abuja"
+                 loading="lazy" />
+          </div>
+          <div class="pg-info">
+            <span class="pg-cat">Birthday</span>
+            <h4>Emerald Elegance 40th</h4>
+            <p>A breathtaking rooftop evening gala illuminated with purple neon rings, warm fairy lights, and lush greenery against the Abuja night skyline.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials" aria-label="Client Testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Client Love</span>
+        <h2>What Our Clients Say</h2>
+        <p>We measure our success by the joy on our clients' faces. Here's what some of them have shared.</p>
+      </div>
+      <div class="testi-grid">
+        <blockquote class="testi-card tc-big" itemscope itemtype="https://schema.org/Review">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text" itemprop="reviewBody">"M&amp;M Styles completely exceeded our expectations. Our wedding was absolutely breathtaking — every single detail was perfect. Guests are still talking about the floral installations and the golden arch backdrop months later. Eniola and her team are simply extraordinary."</p>
+          <footer class="testi-author" itemprop="author"><div class="ta-avatar">AF</div><div><strong>Amaka &amp; Femi O.</strong><span>Wedding, Abuja 2024</span></div></footer>
+        </blockquote>
+        <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text" itemprop="reviewBody">"I trusted M&amp;M Styles with my mum's 60th and they delivered pure magic. The room was transformed beyond what I imagined. Tobi kept me calm all day — I didn't have to worry about a thing!"</p>
+          <footer class="testi-author" itemprop="author"><div class="ta-avatar">CH</div><div><strong>Chidinma H.</strong><span>Birthday Party, 2024</span></div></footer>
+        </blockquote>
+        <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text" itemprop="reviewBody">"Our company's product launch was styled impeccably. The décor was on-brand, sophisticated, and made a lasting impression on all our stakeholders. We'll be using M&amp;M Styles for all future events!"</p>
+          <footer class="testi-author" itemprop="author"><div class="ta-avatar">TK</div><div><strong>Tunde K., CEO</strong><span>Corporate Launch, Abuja 2023</span></div></footer>
+        </blockquote>
+        <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text" itemprop="reviewBody">"My daughter's unicorn party was literally out of a fairytale! Every child was in awe. M&amp;M Styles understood exactly what I wanted and delivered it with such care and creativity."</p>
+          <footer class="testi-author" itemprop="author"><div class="ta-avatar">NJ</div><div><strong>Ngozi J.</strong><span>Kids' Party, 2024</span></div></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISITOR REVIEWS ===== -->
+  <section class="visitor-reviews" id="visitor-reviews" aria-label="Leave a Review">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" style="border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.08);">Community Reviews</span>
+        <h2>Share Your Experience</h2>
+        <p>Had an event with M&amp;M Styles? Your review helps future clients choose with confidence — and means the world to our team.</p>
+      </div>
+      <div class="review-layout">
+        <div>
+          <div class="reviews-feed-header">
+            <span class="rfh-label">All Reviews</span>
+            <span class="rfh-count" id="reviewCount">Loading…</span>
+          </div>
+          <div class="rfh-avg" id="reviewAvg"></div>
+          <div class="reviews-list" id="reviewsList" aria-live="polite" aria-label="Visitor reviews">
+            <div class="reviews-empty" id="reviewsEmpty" hidden>
+              <span class="empty-icon">✦</span>
+              Be the first to leave a review! Your experience matters to us.
+            </div>
+          </div>
+        </div>
+        <div class="review-form-box">
+          <h3 class="rfb-title">Write a Review</h3>
+          <p class="rfb-sub">Share what made your experience with M&amp;M Styles special. Honest reviews help us grow.</p>
+          <div class="star-rating-wrap">
+            <span class="star-rating-label">Your Rating *</span>
+            <div class="stars-interactive" id="starWidget" role="radiogroup" aria-label="Star rating">
+              <span class="star-label" data-val="5" tabindex="0" role="radio" aria-label="5 stars" aria-checked="false">★</span>
+              <span class="star-label" data-val="4" tabindex="0" role="radio" aria-label="4 stars" aria-checked="false">★</span>
+              <span class="star-label" data-val="3" tabindex="0" role="radio" aria-label="3 stars" aria-checked="false">★</span>
+              <span class="star-label" data-val="2" tabindex="0" role="radio" aria-label="2 stars" aria-checked="false">★</span>
+              <span class="star-label" data-val="1" tabindex="0" role="radio" aria-label="1 star"  aria-checked="false">★</span>
+            </div>
+            <div class="star-err" id="starErr">Please select a rating before submitting.</div>
+          </div>
+          <form id="reviewForm" novalidate>
+            <div class="rfb-row">
+              <div class="rfb-group">
+                <label class="rfb-lbl" for="rName">Your Name *</label>
+                <input class="rfb-inp" type="text" id="rName" placeholder="e.g. Adaeze O." required />
+              </div>
+              <div class="rfb-group">
+                <label class="rfb-lbl" for="rEventType">Event Type</label>
+                <select class="rfb-sel" id="rEventType">
+                  <option value="">Select type…</option>
+                  <option>Wedding</option>
+                  <option>Birthday Party</option>
+                  <option>Bridal Shower</option>
+                  <option>Kids' Party</option>
+                  <option>Corporate Event</option>
+                  <option>Engagement Party</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="rfb-group">
+              <label class="rfb-lbl" for="rText">Your Review *</label>
+              <textarea class="rfb-txt" id="rText" placeholder="Tell us about your experience — what made it special, what stood out, what you loved most…" required></textarea>
+            </div>
+            <button type="submit" class="rfb-submit">Submit Review ✦</button>
+          </form>
+          <div class="review-submitted" id="reviewSuccess">
+            <span class="rs-check">✦</span>
+            <h4 class="rs-h">Thank You!</h4>
+            <p class="rs-p">Your review is now live on our reviews wall. We truly appreciate you taking the time to share your experience.</p>
+            <button class="rs-again" id="reviewAgainBtn">Leave Another Review</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING / PACKAGES ===== -->
+  <section class="booking" id="booking" aria-label="Event Packages and Booking">
+    <div class="container">
+      <div class="section-header sh-light">
+        <span class="section-tag st-light">Packages</span>
+        <h2>Choose Your Celebration Package</h2>
+        <p>We offer curated packages to suit every vision and budget. All packages can be fully customised.</p>
+      </div>
+      <div class="packages-grid">
+        <div class="pkg-card">
+          <div class="pkg-tier">Starter</div><h3>Essentials</h3>
+          <p class="pkg-desc">Perfect for intimate celebrations and small gatherings seeking beautiful styling on a focused budget.</p>
+          <ul class="pkg-features"><li>✓ Décor &amp; styling setup</li><li>✓ Up to 50 guests</li><li>✓ 1 consultation session</li><li>✓ Centrepieces &amp; table linen</li><li>✓ Backdrop / arch design</li></ul>
+          <a href="#contact" class="btn btn-outline-gold">Request a Quote</a>
+        </div>
+        <div class="pkg-card pkg-featured">
+          <div class="pkg-badge">Best Value</div>
+          <div class="pkg-tier">Premium</div><h3>Signature</h3>
+          <p class="pkg-desc">Our most popular package for weddings, milestone birthdays, and premium celebrations with full coordination.</p>
+          <ul class="pkg-features"><li>✓ Full event planning &amp; coordination</li><li>✓ Up to 200 guests</li><li>✓ 3 consultation sessions</li><li>✓ Custom themed décor</li><li>✓ Floral installations</li><li>✓ Vendor management</li><li>✓ Day-of coordination</li></ul>
+          <a href="#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+        <div class="pkg-card">
+          <div class="pkg-tier">Elite</div><h3>Luxury Bespoke</h3>
+          <p class="pkg-desc">An entirely bespoke experience with no limits — for clients who demand the absolute pinnacle of luxury and exclusivity.</p>
+          <ul class="pkg-features"><li>✓ Unlimited planning sessions</li><li>✓ 200+ guests welcome</li><li>✓ Custom concept &amp; mood board</li><li>✓ Premium floral &amp; draping</li><li>✓ Full vendor sourcing team</li><li>✓ On-site creative director</li><li>✓ Post-event breakdown</li></ul>
+          <a href="#contact" class="btn btn-outline-gold">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact" aria-label="Contact M&M Styles">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag">Get in Touch</span>
+          <h2>Let's Create Something Beautiful</h2>
+          <p>Ready to start planning your dream event? Reach out to us today and let's turn your vision into reality.</p>
+          <div class="ci-items">
+            <a href="tel:+2348094638790" class="ci-item" aria-label="Call M&M Styles">
+              <span class="ci-icon">📞</span><div><strong>Call Us</strong><span>+234 809 463 8790</span></div>
+            </a>
+            <a href="mailto:info@mmstyles.events" class="ci-item" aria-label="Email M&M Styles">
+              <span class="ci-icon">✉️</span><div><strong>Email Us</strong><span>info@mmstyles.events</span></div>
+            </a>
+            <a href="https://wa.me/2348094638790?text=Hi%20M%26M%20Styles!%20I'd%20like%20to%20enquire%20about%20your%20event%20planning%20services." target="_blank" rel="noopener noreferrer" class="ci-item" aria-label="WhatsApp M&M Styles">
+              <span class="ci-icon">💬</span><div><strong>WhatsApp Us</strong><span>+234 809 463 8790</span></div>
+            </a>
+            <div class="ci-item">
+              <span class="ci-icon">📍</span><div><strong>Based In</strong><span>Abuja, Nigeria</span></div>
+            </div>
+          </div>
+          <div class="ci-social">
+            <a href="https://www.facebook.com/mmstyles.events/" target="_blank" rel="noopener noreferrer" aria-label="M&M Styles on Facebook" class="social-btn social-btn-fb">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073C24 5.41 18.627 0 12 0S0 5.41 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/mmstyles_corporateeventsng/" target="_blank" rel="noopener noreferrer" aria-label="M&M Styles on Instagram" class="social-btn social-btn-ig">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+              Instagram
+            </a>
+            <a href="https://wa.me/2348094638790" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp M&M Styles" class="social-btn social-btn-wa">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 1C7.729 1 1 7.729 1 16c0 2.699.707 5.228 1.943 7.425L1.05 30.26a.75.75 0 0 0 .922.923l6.906-1.877A14.935 14.935 0 0 0 16 31c8.271 0 15-6.729 15-15S24.271 1 16 1zm0 27.5a13.44 13.44 0 0 1-6.79-1.842.75.75 0 0 0-.576-.079l-5.32 1.447 1.46-5.254a.75.75 0 0 0-.085-.593A13.44 13.44 0 0 1 2.5 16C2.5 8.556 8.556 2.5 16 2.5S29.5 8.556 29.5 16 23.444 28.5 16 28.5zm7.39-9.928c-.392-.196-2.318-1.144-2.677-1.274-.358-.13-.619-.196-.879.196-.261.392-1.01 1.274-1.238 1.534-.228.261-.457.293-.849.098-.392-.196-1.655-.61-3.153-1.943-1.165-1.038-1.952-2.319-2.18-2.71-.228-.392-.024-.604.172-.799.176-.175.392-.457.588-.685.196-.228.261-.392.392-.653.13-.261.065-.49-.033-.685-.098-.196-.879-2.12-1.205-2.903-.317-.763-.64-.659-.879-.671-.228-.011-.49-.014-.75-.014s-.685.098-.979.392c-.294.294-1.175 1.144-1.175 2.787 0 1.643 1.207 3.23 1.377 3.453.17.228 2.39 3.65 5.792 5.12.81.35 1.441.558 1.933.715.812.26 1.551.223 2.136.136.651-.097 2.006-.82 2.29-1.612.284-.793.284-1.474.198-1.617-.086-.143-.32-.228-.71-.424z" fill="currentColor"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm" novalidate aria-label="Event Enquiry Form">
+            <h3>Request a Consultation</h3>
+            <div class="form-row">
+              <div class="form-group"><label for="cf-name">Full Name *</label><input type="text" id="cf-name" name="from_name" required autocomplete="name" placeholder="Your full name" /></div>
+              <div class="form-group"><label for="cf-phone">Phone Number *</label><input type="tel" id="cf-phone" name="phone" required autocomplete="tel" placeholder="+234..." /></div>
+            </div>
+            <div class="form-group"><label for="cf-email">Email Address *</label><input type="email" id="cf-email" name="from_email" required autocomplete="email" placeholder="you@example.com" /></div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-eventType">Event Type *</label>
+                <select id="cf-eventType" name="event_type" required>
+                  <option value="" disabled selected>Select event type</option>
+                  <option>Wedding</option><option>Birthday Party</option><option>Bridal Shower</option>
+                  <option>Kids' Party</option><option>Corporate Event</option><option>Engagement Party</option><option>Other</option>
+                </select>
+              </div>
+              <div class="form-group"><label for="cf-eventDate">Event Date</label><input type="date" id="cf-eventDate" name="event_date" /></div>
+            </div>
+            <div class="form-group"><label for="cf-venue">Venue / Location</label><input type="text" id="cf-venue" name="venue" placeholder="Venue name or area in Abuja" /></div>
+            <div class="form-group">
+              <label for="cf-services">Services Interested In</label>
+              <select id="cf-services" name="services">
+                <option value="" disabled selected>Select service</option>
+                <option>Event Planning &amp; Coordination</option><option>Decoration &amp; Styling Only</option>
+                <option>Themed Setup</option><option>Corporate Event Styling</option>
+                <option>Consultation Session</option><option>Full Luxury Package</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="cf-message">Event Details &amp; Vision</label><textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your dream event — theme, colours, guest count, any special requirements..."></textarea></div>
+            <button type="submit" class="btn btn-gold btn-full" id="submitBtn">Send Enquiry ✦</button>
+            <div class="form-error-msg" id="formErrorMsg">
+              Something went wrong sending your enquiry. Please try WhatsApp or email us directly at info@mmstyles.events.
+            </div>
+            <p class="form-note">We typically respond within 24 hours. Your information is kept strictly confidential.</p>
+          </form>
+          <div class="form-success" id="formSuccess" aria-live="polite" hidden>
+            <div class="fs-icon">✦</div>
+            <h3>Thank You!</h3>
+            <p>Your enquiry has been received. Our team will be in touch within 24 hours to discuss your event.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="fg-brand">
+          <div class="footer-logo"><span class="logo-mm">M&amp;M</span><span class="logo-styles">STYLES</span></div>
+          <p>Crafting unforgettable events &amp; luxury experiences in Abuja, Nigeria. Where every detail tells your story.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/mmstyles.events/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="M&amp;M Styles on Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M24 12.073C24 5.41 18.627 0 12 0S0 5.41 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mmstyles_corporateeventsng/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="M&amp;M Styles on Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="https://wa.me/2348094638790" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="Chat on WhatsApp" style="background:#25D366;border-color:#25D366;color:#fff;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="currentColor"><path d="M16 1C7.729 1 1 7.729 1 16c0 2.699.707 5.228 1.943 7.425L1.05 30.26a.75.75 0 0 0 .922.923l6.906-1.877A14.935 14.935 0 0 0 16 31c8.271 0 15-6.729 15-15S24.271 1 16 1zm0 27.5a13.44 13.44 0 0 1-6.79-1.842.75.75 0 0 0-.576-.079l-5.32 1.447 1.46-5.254a.75.75 0 0 0-.085-.593A13.44 13.44 0 0 1 2.5 16C2.5 8.556 8.556 2.5 16 2.5S29.5 8.556 29.5 16 23.444 28.5 16 28.5zm7.39-9.928c-.392-.196-2.318-1.144-2.677-1.274-.358-.13-.619-.196-.879.196-.261.392-1.01 1.274-1.238 1.534-.228.261-.457.293-.849.098-.392-.196-1.655-.61-3.153-1.943-1.165-1.038-1.952-2.319-2.18-2.71-.228-.392-.024-.604.172-.799.176-.175.392-.457.588-.685.196-.228.261-.392.392-.653.13-.261.065-.49-.033-.685-.098-.196-.879-2.12-1.205-2.903-.317-.763-.64-.659-.879-.671-.228-.011-.49-.014-.75-.014s-.685.098-.979.392c-.294.294-1.175 1.144-1.175 2.787 0 1.643 1.207 3.23 1.377 3.453.17.228 2.39 3.65 5.792 5.12.81.35 1.441.558 1.933.715.812.26 1.551.223 2.136.136.651-.097 2.006-.82 2.29-1.612.284-.793.284-1.474.198-1.617-.086-.143-.32-.228-.71-.424z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="fg-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li><li><a href="#visitor-reviews">Leave a Review</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="fg-services">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Wedding Planning</a></li><li><a href="#services">Event Decoration</a></li>
+            <li><a href="#services">Themed Setups</a></li><li><a href="#services">Corporate Events</a></li>
+            <li><a href="#services">Kids' Parties</a></li><li><a href="#services">Consultation</a></li>
+          </ul>
+        </div>
+        <div class="fg-contact">
+          <h4>Contact</h4>
+          <p><a href="tel:+2348094638790">+234 809 463 8790</a></p>
+          <p><a href="mailto:info@mmstyles.events">info@mmstyles.events</a></p>
+          <p><a href="https://wa.me/2348094638790" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p>
+          <p><a href="https://www.facebook.com/mmstyles.events/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+          <p><a href="https://www.instagram.com/mmstyles_corporateeventsng/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+          <p>Abuja, Nigeria</p>
+          <p class="fg-hours">Mon – Sat: 9am – 6pm</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 M&amp;M Styles. All rights reserved. | Luxury Event Planning Abuja Nigeria</p>
+        <p class="footer-seo-text">Event Planner Abuja · Wedding Decoration Nigeria · Birthday Party Styling Abuja · Corporate Event Stylist Nigeria</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* NAVBAR */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+
+    /* MOBILE MENU */
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
+    const closeBtn = document.getElementById('navCloseBtn');
+    function openMenu() { navLinks.classList.add('open'); burger.classList.add('active'); burger.setAttribute('aria-expanded','true'); closeBtn.classList.add('is-open'); document.body.style.overflow='hidden'; }
+    function closeMenu() { navLinks.classList.remove('open'); burger.classList.remove('active'); burger.setAttribute('aria-expanded','false'); closeBtn.classList.remove('is-open'); document.body.style.overflow=''; }
+    burger.addEventListener('click', () => navLinks.classList.contains('open') ? closeMenu() : openMenu());
+    closeBtn.addEventListener('click', closeMenu);
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('click', (e) => { if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !burger.contains(e.target) && e.target !== closeBtn) closeMenu(); });
+
+    /* PORTFOLIO FILTER */
+    document.querySelectorAll('.pf-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pf-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+        btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.pg-item').forEach(item => {
+          const show = f === 'all' || item.dataset.cat === f;
+          item.style.display = show ? '' : 'none';
+          if (show) item.style.animation = 'fadeIn 0.4s ease';
+        });
+      });
+    });
+
+    /* CONTACT FORM — EmailJS */
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var submitBtn = document.getElementById('submitBtn');
+      var errorMsg = document.getElementById('formErrorMsg');
+      var fromName = document.getElementById('cf-name').value.trim();
+      var fromEmail = document.getElementById('cf-email').value.trim();
+      var phone = document.getElementById('cf-phone').value.trim();
+      var eventType = document.getElementById('cf-eventType').value;
+      if (!fromName || !fromEmail || !phone || !eventType) { this.reportValidity(); return; }
+      submitBtn.textContent = 'Sending…'; submitBtn.disabled = true; submitBtn.classList.add('btn-sending'); errorMsg.style.display = 'none';
+      var templateParams = { from_name: fromName, from_email: fromEmail, phone: phone, event_type: eventType, event_date: document.getElementById('cf-eventDate').value || 'Not specified', venue: document.getElementById('cf-venue').value.trim() || 'Not specified', services: document.getElementById('cf-services').value || 'Not specified', message: document.getElementById('cf-message').value.trim() || 'No additional details provided.', to_email: 'samsonvictor863@gmail.com' };
+      try {
+        await emailjs.send('service_oai19oi', 'template_5yoz7uv', templateParams);
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('formSuccess').removeAttribute('hidden');
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        submitBtn.textContent = 'Send Enquiry ✦'; submitBtn.disabled = false; submitBtn.classList.remove('btn-sending'); errorMsg.style.display = 'block';
+      }
+    });
+
+    /* SCROLL ANIMATIONS */
+    const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.service-card, .team-card, .testi-card, .pg-item, .pkg-card').forEach(el => observer.observe(el));
+
+    /* SMOOTH SCROLL */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    /* VISITOR REVIEWS */
+    const REVIEWS_KEY = 'mmstyles_v2_reviews';
+    const SEED_REVIEWS = [
+      { name:'Blessing Adaeze', eventType:'Wedding', rating:5, text:'Absolutely stunning! M&M Styles made our wedding look like something out of a magazine. Every detail was perfectly executed. Guests are still asking us for their contact. Cannot recommend enough!', date:'2025-01-10' },
+      { name:'David Okonkwo', eventType:'Corporate Event', rating:5, text:'Very professional and creative team. They transformed our annual gala into a world-class experience. Stakeholders were blown away by the branding and ambience. Will be booking them every year!', date:'2025-01-28' },
+      { name:'Kemi Suleiman', eventType:'Birthday Party', rating:5, text:'My 40th birthday was everything I dreamed of and more. The Emerald and Gold theme was flawlessly executed. Everyone kept asking who my decorator was — I was so proud to say M&M Styles!', date:'2025-02-05' },
+    ];
+    function safeGetReviews() { try { return JSON.parse(localStorage.getItem(REVIEWS_KEY) || '[]'); } catch { return []; } }
+    function safeSaveReview(r) { try { const all = safeGetReviews(); all.unshift(r); localStorage.setItem(REVIEWS_KEY, JSON.stringify(all)); } catch(err) { console.warn('Storage unavailable', err); } }
+    function initials(name) { return name.trim().split(/\s+/).map(w => w[0]||'').slice(0,2).join('').toUpperCase()||'??'; }
+    function starsHtml(n) { return '★'.repeat(n)+'☆'.repeat(5-n); }
+    function fmtDate(d) { try { return new Date(d).toLocaleDateString('en-NG',{year:'numeric',month:'short',day:'numeric'}); } catch { return d; } }
+    function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function renderReviews() {
+      const userReviews = safeGetReviews();
+      const all = [...userReviews, ...SEED_REVIEWS];
+      const list = document.getElementById('reviewsList');
+      const empty = document.getElementById('reviewsEmpty');
+      const countEl = document.getElementById('reviewCount');
+      const avgEl = document.getElementById('reviewAvg');
+      list.querySelectorAll('.review-card').forEach(c => c.remove());
+      if (all.length === 0) { empty.hidden = false; countEl.textContent = '0 reviews'; avgEl.innerHTML = ''; return; }
+      empty.hidden = true;
+      const avg = (all.reduce((s,r) => s+r.rating, 0)/all.length).toFixed(1);
+      countEl.textContent = all.length+' review'+(all.length!==1?'s':'');
+      avgEl.innerHTML = '<span class="avg-stars">★★★★★</span> &nbsp; Average Rating: <strong>'+avg+' / 5</strong>';
+      all.forEach((r,i) => {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        card.style.animationDelay = (i*0.06)+'s';
+        card.innerHTML = '<div class="rc-top"><div class="rc-author"><div class="rc-avatar">'+esc(initials(r.name))+'</div><div><div class="rc-name">'+esc(r.name)+'</div><div class="rc-date">'+fmtDate(r.date)+'</div></div></div><div class="rc-stars" title="'+r.rating+' out of 5 stars">'+starsHtml(r.rating)+'</div></div><p class="rc-text">"'+esc(r.text)+'"</p>'+(r.eventType?'<span class="rc-tag">'+esc(r.eventType)+'</span>':'');
+        list.appendChild(card);
+      });
+    }
+    var selectedRating = 0;
+    var starSpans = document.querySelectorAll('#starWidget .star-label');
+    function applyStarHighlight(rating) { starSpans.forEach(function(lbl) { var val=parseInt(lbl.dataset.val); lbl.style.color=val<=rating?'#c9a84c':'rgba(255,255,255,0.18)'; lbl.classList.toggle('selected',val<=rating); lbl.setAttribute('aria-checked',val===rating?'true':'false'); }); }
+    starSpans.forEach(function(lbl) {
+      lbl.addEventListener('click', function() { selectedRating=parseInt(lbl.dataset.val); applyStarHighlight(selectedRating); document.getElementById('starErr').style.display='none'; });
+      lbl.addEventListener('keydown', function(e) { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); selectedRating=parseInt(lbl.dataset.val); applyStarHighlight(selectedRating); } });
+      lbl.addEventListener('mouseenter', function() { applyStarHighlight(parseInt(lbl.dataset.val)); });
+      lbl.addEventListener('mouseleave', function() { applyStarHighlight(selectedRating); });
+    });
+    document.getElementById('reviewForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var valid = true;
+      var nameEl = document.getElementById('rName');
+      var textEl = document.getElementById('rText');
+      [nameEl,textEl].forEach(function(el) { el.classList.remove('rfb-err'); });
+      if (!nameEl.value.trim()) { nameEl.classList.add('rfb-err'); valid=false; }
+      if (!textEl.value.trim()) { textEl.classList.add('rfb-err'); valid=false; }
+      if (!selectedRating) { document.getElementById('starErr').style.display='block'; valid=false; }
+      if (!valid) return;
+      var review = { name:nameEl.value.trim(), eventType:document.getElementById('rEventType').value, rating:selectedRating, text:textEl.value.trim(), date:new Date().toISOString().split('T')[0] };
+      safeSaveReview(review); renderReviews();
+      this.style.display='none'; document.querySelector('.star-rating-wrap').style.display='none'; document.getElementById('reviewSuccess').style.display='block';
+      setTimeout(function() { document.getElementById('reviewsList').scrollTo({top:0,behavior:'smooth'}); }, 300);
+    });
+    document.getElementById('reviewAgainBtn').addEventListener('click', function() {
+      selectedRating=0; applyStarHighlight(0);
+      document.getElementById('reviewForm').reset();
+      document.getElementById('reviewForm').style.display=''; document.querySelector('.star-rating-wrap').style.display=''; document.getElementById('reviewSuccess').style.display='none';
+      document.querySelectorAll('.rfb-err').forEach(function(el) { el.classList.remove('rfb-err'); });
+    });
+    renderReviews();
+  </script>
+</body>
+</html>
