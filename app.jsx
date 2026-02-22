@@ -48,18 +48,31 @@
    ══════════════════════════════════════════════════════ */
    
    const GALLERY_PHOTOS = [
-     { id:1,  cat:'wedding',   src:'./pictures/wedding.jpg',        alt:'Golden Opulence Wedding',    aspect:'tall' },
-     { id:2,  cat:'birthday',  src:'./pictures/dinning_mm.jpg',     alt:'Glamour Gala 50th',          aspect:'wide' },
-     { id:3,  cat:'wedding',   src:'./pictures/bridal_shower.jpg',  alt:'Garden Rose Bridal Shower',  aspect:'wide' },
-     { id:4,  cat:'corporate', src:'./pictures/launch.jpg',         alt:'Corporate Product Launch',   aspect:'tall' },
-     { id:5,  cat:'kids',      src:'./pictures/kids.jpg',           alt:'Unicorn Wonderland Party',   aspect:'square' },
-     { id:6,  cat:'birthday',  src:'./pictures/gala.jpg',           alt:'Emerald Elegance 40th',      aspect:'tall' },
-     { id:7,  cat:'wedding',   src:'./pictures/wedding.jpg',        alt:'Rose Garden Wedding',        aspect:'square' },
-     { id:8,  cat:'kids',      src:'./pictures/kids.jpg',           alt:'Rainbow Balloon Party',      aspect:'wide' },
-     { id:9,  cat:'corporate', src:'./pictures/launch.jpg',         alt:'Executive Gala Dinner',      aspect:'square' },
-     { id:10, cat:'birthday',  src:'./pictures/dinning_mm.jpg',     alt:'Sunset 30th Birthday',       aspect:'tall' },
-     { id:11, cat:'wedding',   src:'./pictures/bridal_shower.jpg',  alt:'Vintage Floral Ceremony',    aspect:'square' },
-     { id:12, cat:'kids',      src:'./pictures/kids.jpg',           alt:'Princess Theme Party',       aspect:'wide' },
+     { id:1,  cat:'kids',      src:'./mnm1.jpg',  alt:'Gender Reveal Balloon Arch'         },
+     { id:2,  cat:'wedding',   src:'./mnm2.jpg',  alt:'Romantic Heart Balloon Suite'       },
+     { id:3,  cat:'wedding',   src:'./mnm3.jpg',  alt:'Crimson Floral Moon Gate'           },
+     { id:4,  cat:'wedding',   src:'./mnm4.jpg',  alt:'Purple Floral Ceremony Backdrop'    },
+     { id:5,  cat:'wedding',   src:'./mnm5.jpg',  alt:'Suspended Floral Banquet Hall'      },
+     { id:6,  cat:'wedding',   src:'./mnm6.jpg',  alt:'White Blossom Tree Sweetheart Table'},
+     { id:7,  cat:'corporate', src:'./mnm7.jpg',  alt:'Candlelit Round Table Setup'        },
+     { id:8,  cat:'wedding',   src:'./mnm8.jpg',  alt:'Blush Pink Outdoor Reception'       },
+     { id:9,  cat:'wedding',   src:'./mnm9.jpg',  alt:'Floral Entrance Tunnel'             },
+     { id:10, cat:'birthday',  src:'./mnm10.jpg', alt:'Vibrant Floral Bicycle Wall Art'    },
+     { id:11, cat:'kids',      src:'./mnm11.jpg', alt:'Kids Birthday Balloon Backdrop'     },
+     { id:12, cat:'kids',      src:'./mnm12.jpg', alt:'Balloon Styling Setup'              },
+     { id:13, cat:'birthday',  src:'./mnm13.jpg', alt:'Barbie Theme Birthday Styling'      },
+     { id:14, cat:'kids',      src:'./mnm14.jpg', alt:'White Balloon Christmas Tree'       },
+     { id:15, cat:'corporate', src:'./mnm15.jpg', alt:'Gold & Black Executive Dining'      },
+     { id:16, cat:'corporate', src:'./mnm16.jpg', alt:'Live Entertainment Corporate Event' },
+     { id:17, cat:'corporate', src:'./mnm17.jpg', alt:'Rooftop Event Setup'               },
+     { id:18, cat:'wedding',   src:'./mnm18.jpg', alt:'Peach Floral Bridal Backdrop'       },
+     /* ─── Add more photos here ────────────────────────────────────────────────
+        { id:19, cat:'wedding',   src:'./your-photo.jpg', alt:'Description' },
+        { id:20, cat:'birthday',  src:'./your-photo.jpg', alt:'Description' },
+        { id:21, cat:'corporate', src:'./your-photo.jpg', alt:'Description' },
+        { id:22, cat:'kids',      src:'./your-photo.jpg', alt:'Description' },
+        Categories available: wedding | birthday | corporate | kids
+     ──────────────────────────────────────────────────────────────────────────── */
    ];
    
    /* Gradient fallbacks per category */
@@ -84,15 +97,15 @@
      .gallery-filters {
        display: flex;
        justify-content: center;
-       gap: 10px;
+       gap: 8px;
        flex-wrap: wrap;
-       padding: 0 2rem;
-       margin-bottom: 40px;
+       padding: 0 1.25rem;
+       margin-bottom: 36px;
      }
      .gf-btn {
-       padding: 10px 24px;
+       padding: 10px 20px;
        font-family: 'Cinzel', serif;
-       font-size: 0.62rem;
+       font-size: 0.6rem;
        font-weight: 600;
        letter-spacing: 0.16em;
        text-transform: uppercase;
@@ -102,19 +115,26 @@
        background: transparent;
        cursor: pointer;
        transition: all 0.3s;
+       white-space: nowrap;
      }
      .gf-btn:hover  { border-color: rgba(212,168,67,0.7); color: rgba(255,255,255,0.85); }
      .gf-btn.active { background: linear-gradient(135deg,#f0cc6e,#d4a843); color: #1a0a2e; border-color: transparent; box-shadow: 0 4px 20px rgba(212,168,67,0.4); }
    
-     /* Masonry grid */
+     /* Masonry grid — responsive columns */
      .gallery-masonry {
        columns: 4;
-       column-gap: 12px;
-       padding: 0 2rem;
+       column-gap: 10px;
+       padding: 0 1.25rem;
      }
-     @media (max-width: 1100px) { .gallery-masonry { columns: 3; } }
-     @media (max-width: 768px)  { .gallery-masonry { columns: 2; } }
-     @media (max-width: 480px)  { .gallery-masonry { columns: 1; } }
+     @media (max-width: 1200px) { .gallery-masonry { columns: 4; } }
+     @media (max-width: 900px)  { .gallery-masonry { columns: 3; column-gap: 8px; padding: 0 1rem; } }
+     @media (max-width: 600px)  { .gallery-masonry { columns: 2; column-gap: 7px; padding: 0 0.875rem; } }
+     @media (max-width: 360px)  { .gallery-masonry { columns: 2; column-gap: 5px; padding: 0 0.75rem; } }
+   
+     @media (max-width: 600px) {
+       .gallery-filters { gap: 6px; padding: 0 0.875rem; }
+       .gf-btn { padding: 8px 14px; font-size: 0.56rem; letter-spacing: 0.12em; }
+     }
    
      .gm-item {
        break-inside: avoid;
@@ -438,20 +458,21 @@
      .reviews-root {
        max-width: 1200px;
        margin: 0 auto;
-       padding: 0 2rem 110px;
+       padding: 0 1.25rem 90px;
        display: grid;
        grid-template-columns: 1fr 1fr;
-       gap: 56px;
+       gap: 48px;
        align-items: start;
        position: relative;
        z-index: 1;
      }
-     @media (max-width: 900px) {
-       .reviews-root {
-         grid-template-columns: 1fr;
-       }
-       .rv-form-box { position: static !important; }
+     @media (max-width: 1024px) { .reviews-root { padding: 0 1.75rem 80px; gap: 36px; } }
+     @media (max-width: 900px)  {
+       .reviews-root { grid-template-columns: 1fr; padding: 0 1.25rem 72px; gap: 32px; }
+       .rv-form-box  { position: static !important; top: auto; }
      }
+     @media (max-width: 600px)  { .reviews-root { padding: 0 1rem 60px; gap: 28px; } }
+     @media (max-width: 480px)  { .reviews-root { padding: 0 0.875rem 52px; } }
    
      /* Reviews feed */
      .rv-feed-top {
