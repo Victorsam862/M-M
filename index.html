@@ -81,25 +81,16 @@
                 <stop offset="100%" stop-color="#a855f7"/>
               </linearGradient>
             </defs>
-            <!-- Outer ring -->
             <circle cx="28" cy="28" r="26" stroke="url(#gGold)" stroke-width="1.2" fill="none" opacity="0.7"/>
-            <!-- Mid ring -->
             <circle cx="28" cy="28" r="21" stroke="url(#gGold)" stroke-width="0.6" fill="none" opacity="0.35"/>
-            <!-- Inner fill -->
             <circle cx="28" cy="28" r="18" fill="url(#gPurple)" opacity="0.15"/>
-            <!-- Top diamond -->
             <polygon points="28,4 30,8 28,6 26,8" fill="url(#gGold)"/>
-            <!-- Bottom diamond -->
             <polygon points="28,52 30,48 28,50 26,48" fill="url(#gGold)"/>
-            <!-- Left diamond -->
             <polygon points="4,28 8,30 6,28 8,26" fill="url(#gGold)"/>
-            <!-- Right diamond -->
             <polygon points="52,28 48,30 50,28 48,26" fill="url(#gGold)"/>
-            <!-- M&M text -->
             <text x="28" y="32" text-anchor="middle"
               font-family="Cinzel,serif" font-size="10" font-weight="600"
               fill="url(#gGold)" letter-spacing="0.5">M&amp;M</text>
-            <!-- Thin underline flourish -->
             <line x1="16" y1="35" x2="40" y2="35" stroke="url(#gGold)" stroke-width="0.7" opacity="0.6"/>
           </svg>
         </div>
@@ -126,29 +117,58 @@
         <span></span>
       </button>
     </div>
-
-    <!-- Mobile drawer -->
-    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-      <ul>
-        <li><a href="#home"     class="drawer-link">Home</a></li>
-        <li><a href="#about"    class="drawer-link">About</a></li>
-        <li><a href="#services" class="drawer-link">Services</a></li>
-        <li><a href="#gallery"  class="drawer-link">Gallery</a></li>
-        <li><a href="#reviews"  class="drawer-link">Reviews</a></li>
-        <li><a href="#contact"  class="drawer-link">Book Now</a></li>
-      </ul>
-    </div>
   </nav>
+
+  <!-- Mobile drawer — OUTSIDE navbar to avoid overflow:hidden clipping -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <!-- Decorative background elements -->
+    <div class="drawer-bg-orb drawer-orb-1" aria-hidden="true"></div>
+    <div class="drawer-bg-orb drawer-orb-2" aria-hidden="true"></div>
+    <div class="drawer-dots" aria-hidden="true"></div>
+
+    <!-- Header with logo + close -->
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <span class="dl-name">M&amp;M</span>
+        <span class="dl-sub">STYLES LIMITED</span>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <span class="dc-line dc-l1"></span>
+        <span class="dc-line dc-l2"></span>
+      </button>
+    </div>
+
+    <!-- Gold divider -->
+    <div class="drawer-divider" aria-hidden="true"></div>
+
+    <!-- Nav links -->
+    <ul class="drawer-nav">
+      <li><a href="#home"     class="drawer-link"><span class="dl-num">01</span><span>Home</span></a></li>
+      <li><a href="#about"    class="drawer-link"><span class="dl-num">02</span><span>About</span></a></li>
+      <li><a href="#services" class="drawer-link"><span class="dl-num">03</span><span>Services</span></a></li>
+      <li><a href="#gallery"  class="drawer-link"><span class="dl-num">04</span><span>Gallery</span></a></li>
+      <li><a href="#reviews"  class="drawer-link"><span class="dl-num">05</span><span>Reviews</span></a></li>
+    </ul>
+
+    <!-- CTA button -->
+    <a href="#contact" class="drawer-cta drawer-link">✦ Book a Consultation ✦</a>
+
+    <!-- Footer -->
+    <div class="drawer-footer">
+      <p>M&amp;M Styles Limited</p>
+      <p>Abuja, Nigeria</p>
+    </div>
+  </div>
+
+  <!-- Overlay backdrop — also OUTSIDE navbar -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
-    <!-- Animated background particles -->
     <div class="hero-particles" id="heroParticles"></div>
-    <!-- Decorative gradient orbs -->
     <div class="hero-orb orb-1"></div>
     <div class="hero-orb orb-2"></div>
     <div class="hero-orb orb-3"></div>
-    <!-- Dot grid -->
     <div class="hero-dots"></div>
 
     <div class="container">
@@ -188,7 +208,6 @@
           </div>
         </div>
 
-        <!-- Hero visual side -->
         <div class="hero-visual">
           <div class="hv-ring hv-ring-1"></div>
           <div class="hv-ring hv-ring-2"></div>
@@ -221,7 +240,6 @@
     <div class="intro-bg-text" aria-hidden="true">M&amp;M</div>
     <div class="container">
       <div class="intro-grid">
-        <!-- Left: text -->
         <div class="intro-text reveal-left">
           <span class="section-tag">Who We Are</span>
           <h2>Where Vision Meets <em>Artistry</em></h2>
@@ -230,16 +248,13 @@
           <a href="#services" class="btn btn-outline-gold" style="margin-top:8px">Discover Our Services</a>
         </div>
 
-        <!-- Right: floating cards — NO purple background on visual wrapper -->
         <div class="intro-visual reveal-right">
-          <!-- Transparent wrapper — floating cards only -->
           <div class="intro-float-grid">
             <div class="ifc ifc-1"><div class="ifc-icon">💍</div><div class="ifc-label">Luxury Weddings</div><div class="ifc-val">200+</div></div>
             <div class="ifc ifc-2"><div class="ifc-icon">🎂</div><div class="ifc-label">Birthdays</div><div class="ifc-val">150+</div></div>
             <div class="ifc ifc-3"><div class="ifc-icon">🌸</div><div class="ifc-label">Florals</div><div class="ifc-val">500+</div></div>
             <div class="ifc ifc-4"><div class="ifc-icon">⭐</div><div class="ifc-label">Satisfaction</div><div class="ifc-val">100%</div></div>
           </div>
-          <!-- Central emblem — NO opaque background -->
           <div class="intro-emblem">
             <div class="emblem-ring"></div>
             <div class="emblem-inner">
@@ -373,7 +388,6 @@
           </div>
         </article>
       </div>
-      <!-- Philosophy quote -->
       <div class="philosophy reveal-up">
         <div class="phi-deco" aria-hidden="true">"</div>
         <blockquote>We don't just decorate spaces — we create worlds where your most precious memories are made.</blockquote>
@@ -391,7 +405,6 @@
         <p>Each event is a unique story — a few frames from the unforgettable experiences we've had the honour of creating.</p>
       </div>
     </div>
-    <!-- React mounts here -->
     <div id="gallery-root"></div>
   </section>
 
@@ -462,7 +475,6 @@
         <p class="light">Had an event with M&amp;M Styles Limited? Your review is permanent and visible to everyone worldwide — it means the world to our team.</p>
       </div>
     </div>
-    <!-- React mounts here -->
     <div id="reviews-root"></div>
   </section>
 
@@ -470,7 +482,6 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-grid">
-        <!-- Info -->
         <div class="contact-info reveal-left">
           <span class="section-tag">Get in Touch</span>
           <h2>Let's Create Something <em>Beautiful</em></h2>
@@ -509,7 +520,6 @@
           </div>
         </div>
 
-        <!-- Form -->
         <div class="contact-form-wrap reveal-right">
           <form id="contactForm" novalidate>
             <h3>Request a Consultation</h3>
@@ -652,30 +662,55 @@
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
 
-  /* Single burger — mobile drawer only */
-  const burger = document.getElementById('burger');
-  const drawer = document.getElementById('mobileDrawer');
+  /* Mobile drawer */
+  const burger        = document.getElementById('burger');
+  const drawer        = document.getElementById('mobileDrawer');
+  const drawerClose   = document.getElementById('drawerClose');
+  const drawerOverlay = document.getElementById('drawerOverlay');
   let menuOpen = false;
-  function toggleMenu() {
-    menuOpen = !menuOpen;
-    burger.classList.toggle('open', menuOpen);
-    burger.setAttribute('aria-expanded', menuOpen);
-    drawer.classList.toggle('open', menuOpen);
-    drawer.setAttribute('aria-hidden', !menuOpen);
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
+
+  function openMenu() {
+    menuOpen = true;
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    drawerOverlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    drawer.querySelectorAll('.drawer-link, .drawer-cta').forEach((el, i) => {
+      el.style.transitionDelay = `${0.08 + i * 0.06}s`;
+      el.classList.add('in');
+    });
   }
+
   function closeMenu() {
     if (!menuOpen) return;
     menuOpen = false;
     burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
+    burger.setAttribute('aria-expanded', 'false');
     drawer.classList.remove('open');
-    drawer.setAttribute('aria-hidden', true);
+    drawer.setAttribute('aria-hidden', 'true');
+    drawerOverlay.classList.remove('visible');
     document.body.style.overflow = '';
+    drawer.querySelectorAll('.drawer-link, .drawer-cta').forEach(el => {
+      el.style.transitionDelay = '0s';
+      el.classList.remove('in');
+    });
   }
-  burger.addEventListener('click', e => { e.stopPropagation(); toggleMenu(); });
-  document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeMenu));
-  document.addEventListener('click', e => { if (menuOpen && !drawer.contains(e.target) && !burger.contains(e.target)) closeMenu(); });
+
+  burger.addEventListener('click', e => { e.stopPropagation(); openMenu(); });
+
+  if (drawerClose) {
+    drawerClose.addEventListener('click', () => {
+      drawerClose.classList.remove('spinning');
+      void drawerClose.offsetWidth;
+      drawerClose.classList.add('spinning');
+      setTimeout(closeMenu, 420);
+    });
+  }
+
+  if (drawerOverlay) drawerOverlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.drawer-link, .drawer-cta').forEach(l => l.addEventListener('click', closeMenu));
 
   /* Scroll reveal */
   const revealObs = new IntersectionObserver(entries => {
