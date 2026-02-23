@@ -110,7 +110,7 @@
         <li><a href="#contact"   class="nav-link nav-cta">Book Now</a></li>
       </ul>
 
-      <!-- Single burger button -->
+      <!-- Burger button -->
       <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -119,14 +119,12 @@
     </div>
   </nav>
 
-  <!-- Mobile drawer — OUTSIDE navbar to avoid overflow:hidden clipping -->
+  <!-- Mobile drawer — OUTSIDE navbar -->
   <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Navigation menu">
-    <!-- Decorative background elements -->
     <div class="drawer-bg-orb drawer-orb-1" aria-hidden="true"></div>
     <div class="drawer-bg-orb drawer-orb-2" aria-hidden="true"></div>
     <div class="drawer-dots" aria-hidden="true"></div>
 
-    <!-- Header with logo + close -->
     <div class="drawer-header">
       <div class="drawer-logo">
         <span class="dl-name">M&amp;M</span>
@@ -138,10 +136,8 @@
       </button>
     </div>
 
-    <!-- Gold divider -->
     <div class="drawer-divider" aria-hidden="true"></div>
 
-    <!-- Nav links -->
     <ul class="drawer-nav">
       <li><a href="#home"     class="drawer-link"><span class="dl-num">01</span><span>Home</span></a></li>
       <li><a href="#about"    class="drawer-link"><span class="dl-num">02</span><span>About</span></a></li>
@@ -150,17 +146,15 @@
       <li><a href="#reviews"  class="drawer-link"><span class="dl-num">05</span><span>Reviews</span></a></li>
     </ul>
 
-    <!-- CTA button -->
     <a href="#contact" class="drawer-cta drawer-link">✦ Book a Consultation ✦</a>
 
-    <!-- Footer -->
     <div class="drawer-footer">
       <p>M&amp;M Styles Limited</p>
       <p>Abuja, Nigeria</p>
     </div>
   </div>
 
-  <!-- Overlay backdrop — also OUTSIDE navbar -->
+  <!-- Overlay backdrop -->
   <div class="drawer-overlay" id="drawerOverlay"></div>
 
   <!-- ===== HERO ===== -->
@@ -648,13 +642,13 @@
   });
 
   /* Hero particles */
-  const container = document.getElementById('heroParticles');
-  if (container) {
+  const particleContainer = document.getElementById('heroParticles');
+  if (particleContainer) {
     for (let i = 0; i < 40; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
       p.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${2+Math.random()*4}px;height:${2+Math.random()*4}px;animation-delay:${Math.random()*8}s;animation-duration:${6+Math.random()*8}s;opacity:${0.2+Math.random()*0.5}`;
-      container.appendChild(p);
+      particleContainer.appendChild(p);
     }
   }
 
@@ -662,55 +656,120 @@
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
 
-  /* Mobile drawer */
-  const burger        = document.getElementById('burger');
-  const drawer        = document.getElementById('mobileDrawer');
-  const drawerClose   = document.getElementById('drawerClose');
-  const drawerOverlay = document.getElementById('drawerOverlay');
-  let menuOpen = false;
+  /* =============================================
+     MOBILE DRAWER — FIXED IMPLEMENTATION
+     Uses a single source of truth (isOpen flag)
+     and proper cleanup to prevent stuck states.
+  ============================================= */
+  (function() {
+    const burger        = document.getElementById('burger');
+    const drawer        = document.getElementById('mobileDrawer');
+    const drawerClose   = document.getElementById('drawerClose');
+    const drawerOverlay = document.getElementById('drawerOverlay');
 
-  function openMenu() {
-    menuOpen = true;
-    burger.classList.add('open');
-    burger.setAttribute('aria-expanded', 'true');
-    drawer.classList.add('open');
-    drawer.setAttribute('aria-hidden', 'false');
-    drawerOverlay.classList.add('visible');
-    document.body.style.overflow = 'hidden';
-    drawer.querySelectorAll('.drawer-link, .drawer-cta').forEach((el, i) => {
-      el.style.transitionDelay = `${0.08 + i * 0.06}s`;
-      el.classList.add('in');
+    let isOpen = false;
+    let closeTimeout = null;
+
+    function openMenu() {
+      if (isOpen) return;
+      isOpen = true;
+
+      // Clear any pending close timeout
+      if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
+
+      burger.setAttribute('aria-expanded', 'true');
+      burger.classList.add('open');
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      drawerOverlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+
+      // Animate drawer links in
+      drawer.querySelectorAll('.drawer-link, .drawer-cta').forEach((el, i) => {
+        el.style.transitionDelay = (0.08 + i * 0.06) + 's';
+        el.classList.add('in');
+      });
+    }
+
+    function closeMenu() {
+      if (!isOpen) return;
+      isOpen = false;
+
+      burger.setAttribute('aria-expanded', 'false');
+      burger.classList.remove('open');
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      drawerOverlay.classList.remove('visible');
+
+      // Reset link animations
+      drawer.querySelectorAll('.drawer-link, .drawer-cta').forEach(el => {
+        el.style.transitionDelay = '0s';
+        el.classList.remove('in');
+      });
+
+      // Restore body scroll after drawer transition completes
+      closeTimeout = setTimeout(() => {
+        document.body.style.overflow = '';
+        closeTimeout = null;
+      }, 450);
+    }
+
+    function toggleMenu() {
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    // Burger click — toggle
+    burger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleMenu();
     });
-  }
 
-  function closeMenu() {
-    if (!menuOpen) return;
-    menuOpen = false;
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    drawer.classList.remove('open');
-    drawer.setAttribute('aria-hidden', 'true');
-    drawerOverlay.classList.remove('visible');
-    document.body.style.overflow = '';
-    drawer.querySelectorAll('.drawer-link, .drawer-cta').forEach(el => {
-      el.style.transitionDelay = '0s';
-      el.classList.remove('in');
+    // Close button
+    if (drawerClose) {
+      drawerClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        // Spin animation then close
+        drawerClose.classList.remove('spinning');
+        void drawerClose.offsetWidth; // reflow
+        drawerClose.classList.add('spinning');
+        closeMenu();
+        // Clean up spin class after animation
+        setTimeout(() => drawerClose.classList.remove('spinning'), 500);
+      });
+    }
+
+    // Overlay click
+    if (drawerOverlay) {
+      drawerOverlay.addEventListener('click', closeMenu);
+    }
+
+    // Drawer nav links — close then scroll
+    drawer.querySelectorAll('.drawer-link, .drawer-cta').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          closeMenu();
+          // Wait for drawer to close before scrolling
+          setTimeout(() => {
+            const target = document.querySelector(href);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          }, 460);
+        } else {
+          closeMenu();
+        }
+      });
     });
-  }
 
-  burger.addEventListener('click', e => { e.stopPropagation(); openMenu(); });
-
-  if (drawerClose) {
-    drawerClose.addEventListener('click', () => {
-      drawerClose.classList.remove('spinning');
-      void drawerClose.offsetWidth;
-      drawerClose.classList.add('spinning');
-      setTimeout(closeMenu, 420);
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isOpen) closeMenu();
     });
-  }
-
-  if (drawerOverlay) drawerOverlay.addEventListener('click', closeMenu);
-  document.querySelectorAll('.drawer-link, .drawer-cta').forEach(l => l.addEventListener('click', closeMenu));
+  })();
 
   /* Scroll reveal */
   const revealObs = new IntersectionObserver(entries => {
@@ -718,11 +777,11 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right,.service-card,.team-card,.pkg-card,.ifc').forEach(el => revealObs.observe(el));
 
-  /* Smooth scroll */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
+  /* Smooth scroll for non-drawer links */
+  document.querySelectorAll('a[href^="#"]:not(.drawer-link):not(.drawer-cta)').forEach(a => {
     a.addEventListener('click', function(e) {
       const t = document.querySelector(this.getAttribute('href'));
-      if (t) { e.preventDefault(); closeMenu(); t.scrollIntoView({ behavior:'smooth' }); }
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth' }); }
     });
   });
 
